@@ -37,12 +37,36 @@ class cidade(models.Model):
         verbose_name_plural = 'Cidades'
         ordering = ['nome']
 
+class area(models.Model):
+    nome = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nome
+    
+    class Meta:
+        verbose_name = 'Área'
+        verbose_name_plural = 'Áreas'
+        ordering = ['nome']
+
+class subarea(models.Model):
+    nome = models.CharField(max_length=50)
+    area = models.ForeignKey(area, on_delete=models.RESTRICT)
+
+    def __str__(self):
+        return self.nome
+    
+    class Meta:
+        verbose_name = 'Subárea'
+        verbose_name_plural = 'Subáreas'
+        ordering = ['nome']
+
 class autor(models.Model):
     nome = models.CharField(max_length=50)
     sobrenome = models.CharField(max_length=50)
     email = models.EmailField()
     dataNascimento = models.DateField()
     cidade = models.ForeignKey(cidade, on_delete=models.RESTRICT)
+    subarea = models.ForeignKey(subarea, on_delete=models.RESTRICT, null=True, blank=True)
 
     def __str__(self):
         return f'{self.nome} {self.sobrenome}'
