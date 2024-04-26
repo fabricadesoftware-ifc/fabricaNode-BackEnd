@@ -1,5 +1,3 @@
-from .area import area
-from .autor import autor
 from .cidade import cidade
 from .editora import editora
 from .estado import estado
@@ -7,4 +5,6 @@ from .keyword import keyword
 from .pais import pais
 from .publicacao import publicacao
 from .publicacao_keyword import publicacao_keyword
+from .area import area
 from .subarea import subarea
+from .autor import autor
