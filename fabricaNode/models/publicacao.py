@@ -4,7 +4,7 @@ from .autor import Autor
 from .editora import Editora
 
 
-class publicacao(models.Model):
+class Publicacao(models.Model):
     titulo = models.CharField(max_length=150)
     dataPublicacao = models.DateField()
     autor = models.ManyToManyField(Autor)

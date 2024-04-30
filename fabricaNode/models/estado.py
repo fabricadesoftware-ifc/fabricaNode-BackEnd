@@ -2,7 +2,7 @@ from django.db import models
 
 from .pais import Pais
 
-class estado(models.Model):
+class Estado(models.Model):
     nome = models.CharField(max_length=50)
     sigla = models.CharField(max_length=2)
     pais = models.ForeignKey(Pais, on_delete=models.RESTRICT)
