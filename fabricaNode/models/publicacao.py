@@ -8,7 +8,7 @@ class publicacao(models.Model):
     titulo = models.CharField(max_length=150)
     dataPublicacao = models.DateField()
     autor = models.ManyToManyField(autor)
-    editora = models.ForeignKey(editora, on_delete=models.RESTRICT)
+    editora = models.ForeignKey(editora, on_delete=models.RESTRICT, null=True, blank=True)
     conferencia = models.CharField(max_length=150)
     abstract = models.TextField()
     url = models.URLField()
