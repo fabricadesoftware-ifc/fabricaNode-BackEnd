@@ -7,3 +7,4 @@ from .keyword import KeywordSerializer
 from .pais import PaisSerializer
 from .publicacao_keyword import Publicacao_keywordSerializer
 from .publicacao import PublicacaoSerializer
+from .subarea import SubareaSerializer

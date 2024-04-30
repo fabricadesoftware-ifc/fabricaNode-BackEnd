@@ -7,3 +7,4 @@ from .keyword import KeywordViewSet
 from .pais import PaisViewSet
 from .publicacao_keyword import Publicacao_keywordViewSet
 from .publicacao import PublicacaoViewSet
+from .subarea import SubareaViewSet
