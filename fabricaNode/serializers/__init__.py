@@ -5,3 +5,4 @@ from .editora import EditoraSerializer
 from .estado import EstadoSerializer
 from .keyword import KeywordSerializer
 from .pais import PaisSerializer
+from .publicacao_keyword import Publicacao_keywordSerializer

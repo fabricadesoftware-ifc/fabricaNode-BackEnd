@@ -5,3 +5,4 @@ from .editora import EditoraViewSet
 from .estado import EstadoViewSet
 from .keyword import KeywordViewSet
 from .pais import PaisViewSet
+from .publicacao_keyword import Publicacao_keywordViewSet
