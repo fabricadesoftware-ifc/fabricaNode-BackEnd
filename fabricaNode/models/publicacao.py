@@ -1,14 +1,14 @@
 from django.db import models
 
-from .autor import autor
-from .editora import editora
+from .autor import Autor
+from .editora import Editora
 
 
 class publicacao(models.Model):
     titulo = models.CharField(max_length=150)
     dataPublicacao = models.DateField()
-    autor = models.ManyToManyField(autor)
-    editora = models.ForeignKey(editora, on_delete=models.RESTRICT, null=True, blank=True)
+    autor = models.ManyToManyField(Autor)
+    editora = models.ForeignKey(Editora, on_delete=models.RESTRICT, null=True, blank=True)
     conferencia = models.CharField(max_length=150)
     abstract = models.TextField()
     url = models.URLField()

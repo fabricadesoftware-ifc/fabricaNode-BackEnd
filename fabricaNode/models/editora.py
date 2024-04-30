@@ -1,10 +1,10 @@
 from django.db import models
 
-from .cidade import cidade
+from .cidade import Cidade
 
-class editora(models.Model):
+class Editora(models.Model):
     nome = models.CharField(max_length=50)
-    cidade = models.ForeignKey(cidade, on_delete=models.RESTRICT)
+    cidade = models.ForeignKey(Cidade, on_delete=models.RESTRICT)
 
     def __str__(self):
         return self.nome

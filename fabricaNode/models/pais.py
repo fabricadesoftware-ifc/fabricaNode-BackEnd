@@ -1,6 +1,6 @@
 from django.db import models
 
-class pais(models.Model):
+class Pais(models.Model):
     nome = models.CharField(max_length=50)
     sigla = models.CharField(max_length=2)
 
