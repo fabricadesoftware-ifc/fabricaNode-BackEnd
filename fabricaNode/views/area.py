@@ -1,9 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
 
-from fabricaNode.models import area
+from fabricaNode.models import Area
 from fabricaNode.serializers import AreaSerializer
 
 
 class AreaViewSet(ModelViewSet):
-    queryset = area.objects.all()
+    queryset = Area.objects.all()
     serializer_class = AreaSerializer
