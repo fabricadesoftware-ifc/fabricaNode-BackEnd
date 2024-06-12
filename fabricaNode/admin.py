@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from .models import autor, cidade, editora, estado, pais, publicacao, keyword, publicacao_keyword, area, subarea
+from .models import Autor, Cidade, Editora, Estado, Pais, Publicacao, Keyword, Publicacao_keyword, Area, Subarea
 
-admin.site.register(autor)
-admin.site.register(cidade)
-admin.site.register(editora)
-admin.site.register(estado)
-admin.site.register(pais)
-admin.site.register(publicacao)
-admin.site.register(keyword)
-admin.site.register(publicacao_keyword)
-admin.site.register(area)
-admin.site.register(subarea)
+admin.site.register(Autor)
+admin.site.register(Cidade)
+admin.site.register(Editora)
+admin.site.register(Estado)
+admin.site.register(Pais)
+admin.site.register(Publicacao)
+admin.site.register(Keyword)
+admin.site.register(Publicacao_keyword)
+admin.site.register(Area)
+admin.site.register(Subarea)

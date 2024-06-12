@@ -1,11 +1,11 @@
 from django.db import models
 
-from .estado import estado
+from .estado import Estado
 
 
-class cidade(models.Model):
+class Cidade(models.Model):
     nome = models.CharField(max_length=50)
-    estado = models.ForeignKey(estado, on_delete=models.RESTRICT)
+    estado = models.ForeignKey(Estado, on_delete=models.RESTRICT)
 
     def __str__(self):
         return f'{self.nome}({self.estado.sigla})'

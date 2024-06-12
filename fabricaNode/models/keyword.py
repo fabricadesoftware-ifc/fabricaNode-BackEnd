@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class keyword(models.Model):
+class Keyword(models.Model):
     palavra = models.CharField(max_length=50)
 
     def __str__(self):
