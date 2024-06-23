@@ -38,14 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drf_spectacular',
+    "corsheaders",
+    'fcm_django',
+    #'passage_auth',
     'rest_framework',
-    'fabricaNode',
+    "rest_framework_simplejwt",
+    'core.fabricaNode',
+    'core.usuario',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -73,6 +79,15 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
+     "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
@@ -134,3 +149,11 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API for graph management and article analysis.",
     "VERSION": "1.0.0",
 }
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+AUTH_USER_MODEL = "usuario.Usuario"
+
+PASSAGE_APP_ID: str = "9o2FumJTyoxmXOtHzjTdkOo9"
+PASSAGE_API_KEY: str = "wnlJMxapVm.Xx78ff1J8fL0FzslM7zptrA3fMNDhprYYb4g1TikvnEgez18kY9OC5oeYbRFF2b5"
+PASSAGE_AUTH_STRATEGY: int = 2
