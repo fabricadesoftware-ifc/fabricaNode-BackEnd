@@ -1,9 +1,9 @@
 from rest_framework.serializers import ModelSerializer
 
-from fabricaNode.models import area
+from fabricaNode.models import Area
 
 
 class AreaSerializer(ModelSerializer):
     class Meta:
-        model = area
+        model = Area
         fields = '__all__'
