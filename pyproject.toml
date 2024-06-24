@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "django>=5.0.4",
     "djangorestframework>=3.15.1",
+    "drf-spectacular>=0.27.2",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"
