@@ -4,7 +4,7 @@ from .area import Area
 
 
 class Subarea(models.Model):
-    nome = models.CharField(max_length=50)
+    nome = models.CharField(max_length=50, unique=True)
     area = models.ForeignKey(Area, on_delete=models.RESTRICT)
 
     def __str__(self):
