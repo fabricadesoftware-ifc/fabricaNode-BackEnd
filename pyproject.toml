@@ -30,5 +30,6 @@ distribution = false
 dev = "python manage.py runserver 0.0.0.0:8000"
 runserver = "python manage.py runserver"
 createsuperuser = "python manage.py createsuperuser"
+pre_migrate = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
-makemigrations = "python manage.py makemigrations"
+post_migrate = "python manage.py graph_models -g -o core.png core"
