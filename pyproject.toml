@@ -20,5 +20,6 @@ distribution = false
 
 [tool.pdm.scripts]
 dev = "python manage.py runserver"
-makemigrations = "python manage.py makemigrations"
+pre_migrate = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
+post_migrate = "python manage.py graph_models -g -o core.png core"
