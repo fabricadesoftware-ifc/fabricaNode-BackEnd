@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
+import uuid
 
 class CustomUserManager(BaseUserManager):
     """
@@ -8,14 +9,16 @@ class CustomUserManager(BaseUserManager):
     for authentication instead of usernames.
     """
 
-    def create_user(self, email, passage_id, **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
         """
         Create and save a user with the given email and password.
         """
         if not email:
             raise ValueError(_("The Email must be set"))
         email = self.normalize_email(email)
-        user = self.model(email=email, passage_id=passage_id, **extra_fields)
+        user = self.model(email=email, **extra_fields)
+        extra_fields.setdefault("passage_id", str(uuid.uuid4())) 
+        user.set_password(password)
         user.save()
         return user
 
