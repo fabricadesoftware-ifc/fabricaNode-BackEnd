@@ -27,10 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_spectacular',
     "corsheaders",
-    'fcm_django',
-    #'passage_auth',
     'rest_framework',
     "rest_framework_simplejwt",
+    "drf_spectacular",
     'core.fabricaNode',
     'core.usuario',
 ]
@@ -38,8 +37,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     "corsheaders.middleware.CorsMiddleware",
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -68,13 +67,13 @@ TEMPLATES = [
     },
 ]
 
+
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissions",
-    ],
-     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
+    "DEFAULT_AUTHENTICATION_CLASSES": ("core.usuario.authentication.TokenAuthentication",),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticatedOrReadOnly",),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "PAGE_SIZE": 10,
 }
 
 WSGI_APPLICATION = 'config.wsgi.application'
@@ -141,6 +140,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = "usuario.Usuario"
 
-PASSAGE_APP_ID: str = '8hvbdcIOsej2p0nx6WXNa3F7'
-PASSAGE_API_KEY: str = 'J3O67qOYsL.QcswfY49D5tDX2Rg05TOi2Anpsj7Gz5Wa2cPe9nYFZZAq8NDgrp3Df0aBk23lcQs'
-PASSAGE_AUTH_STRATEGY: int = 2
+PASSAGE_APP_ID = '2TXjjhFWhntb7WqVkG46xAmb'
+PASSAGE_API_KEY = 'UqCSR3SJ04.u0ivUTPtIBR0MbL8SSpnVS5P7dj7pIZLP77y4shhxCD7ufNRdc0NvHh1WeZ5kI29'
+PASSAGE_AUTH_STRATEGY = 2

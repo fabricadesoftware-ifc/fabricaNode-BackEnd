@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import (
 )
 
 from core.fabricaNode.views import AreaViewSet, AutorViewSet, CidadeViewSet, EditoraViewSet, EstadoViewSet, KeywordViewSet, PaisViewSet, Publicacao_keywordViewSet, PublicacaoViewSet, SubareaViewSet
-from core.usuario.views import AuthTokenView
+
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -47,8 +47,4 @@ urlpatterns = [
     path("api/", include(usuario_router.urls)),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("api/auth/", AuthTokenView.as_view(), name="auth_token"),
-    path("api/", include(router.urls)),
-    #path("api/client/", include("passage_auth.urls")),
-    
 ]

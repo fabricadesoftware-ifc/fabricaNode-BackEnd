@@ -2,40 +2,18 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 
-from .models import Usuario
-from .serializers import UsuarioSerializer
-
-from core.usuario.authentication import TokenAuthentication
-
-from firebase_admin.messaging import Message
-from fcm_django.models import FCMDevice
-
-
-class AuthTokenView(APIView):
-    authentication_classes = [TokenAuthentication]
-
-    @staticmethod
-    def post(request):
-        user = request.user
-        passage_user_id = user.passage_id
-        return Response(
-            {"authStatus": "success", "id": user.id, "passage_id": user.passage_id}, status=status.HTTP_200_OK
-        )
-
+from core.usuario.models import Usuario as User
+from core.usuario.serializers import UsuarioSerializer
 
 class UserViewSet(ModelViewSet):
-    queryset = Usuario.objects.all()
+    queryset = User.objects.all().order_by("id")
     serializer_class = UsuarioSerializer
 
-    @action(detail=False, methods=["post"])
-    def send(self, request):
-        # You can still use .filter() or any methods that return QuerySet (from the chain)
-        device = FCMDevice.objects.all().first()
-        # send_message parameters include: message, dry_run, app
-        device.send_message(Message(data={...}))
-        return Response({"message": "Hello, World!"})
 
-    # @action(detail=False, methods=["post"])
-    # def register(self, request):
+    @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
+    def me(self, request):
+        user = request.user
+        serializer = UsuarioSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
