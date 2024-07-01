@@ -6,14 +6,27 @@ authors = [
     {name = "fabricaDeSoftware", email = "fabio.moura@ifc.edu.br"},
 ]
 dependencies = [
-    "django>=5.0.4",
-    "djangorestframework>=3.15.1",
+    "django>=4.2.13",
+    "djangorestframework>=3.15.2",
+    "setuptools>=70.1.0",
+    "django-cors-headers>=4.4.0",
+    "djangorestframework-simplejwt>=5.3.1",
+    "passage-identity>=2.5.0",
+    "firebase-admin>=6.5.0",
+    "fcm-django>=2.1.0",
     "drf-spectacular>=0.27.2",
 ]
-requires-python = "==3.12.*"
+requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
 
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver 0.0.0.0:8000"
+runserver = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
