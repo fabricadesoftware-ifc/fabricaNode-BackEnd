@@ -33,6 +33,9 @@ files = [
     {file = "annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"},
     {file = "annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"},
 ]
+strategy = ["cross_platform", "inherit_metadata"]
+lock_version = "4.4.2"
+content_hash = "sha256:5b33960887fbdc9d73cd120c98deee39352a1356bb3d2f18a083e719702eeee5"
 
 [[package]]
 name = "asgiref"
@@ -1313,4 +1316,11 @@ marker = "python_version < \"3.12\""
 files = [
     {file = "zipp-3.19.2-py3-none-any.whl", hash = "sha256:f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c"},
     {file = "zipp-3.19.2.tar.gz", hash = "sha256:bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"},
+]
+name = "uuid"
+version = "1.30"
+summary = "UUID object and generation functions"
+groups = ["default"]
+files = [
+    {file = "uuid-1.30.tar.gz", hash = "sha256:1f87cc004ac5120466f36c5beae48b4c48cc411968eed0eaecd3da82aa96193f"},
 ]
