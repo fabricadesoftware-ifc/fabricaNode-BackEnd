@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework',
     "rest_framework_simplejwt",
-    "drf_spectacular",
     'core.fabricaNode',
     'core.usuario',
 ]
@@ -45,9 +44,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-}
 
 ROOT_URLCONF = 'config.urls'
 
@@ -135,6 +131,7 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API for graph management and article analysis.",
     "VERSION": "1.0.0",
 }
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 
