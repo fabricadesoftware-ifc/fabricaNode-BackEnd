@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_spectacular',
     "corsheaders",
     'rest_framework',
     "rest_framework_simplejwt",
@@ -141,5 +140,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = "usuario.Usuario"
 
 PASSAGE_APP_ID = '2TXjjhFWhntb7WqVkG46xAmb'
-PASSAGE_API_KEY = 'UqCSR3SJ04.u0ivUTPtIBR0MbL8SSpnVS5P7dj7pIZLP77y4shhxCD7ufNRdc0NvHh1WeZ5kI29'
+PASSAGE_API_KEY = 'pViyBi2hmP.ybl7cWgtedVKULSyldpyCJD6gJUYTSTAi1Vi3BT5ewgqF8N3tbUcTCEMeKsZZ7AX'
 PASSAGE_AUTH_STRATEGY = 2
