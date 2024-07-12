@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from core.fabricaNode.views import AreaViewSet, AutorViewSet, CidadeViewSet, EditoraViewSet, EstadoViewSet, KeywordViewSet, PaisViewSet, Publicacao_keywordViewSet, PublicacaoViewSet, SubareaViewSet
+from core.fabricaNode.views import AreaViewSet, AutorViewSet, CidadeViewSet, EditoraViewSet, EstadoViewSet, KeywordViewSet, PaisViewSet, PublicacaoViewSet, SubareaViewSet
 
 
 from drf_spectacular.views import (
@@ -26,7 +26,6 @@ router.register(r'editoras', EditoraViewSet)
 router.register(r'estados', EstadoViewSet)
 router.register(r'keywords', KeywordViewSet)
 router.register(r'pais', PaisViewSet)
-router.register(r'publicacao_keywords', Publicacao_keywordViewSet)
 router.register(r'publicacaos', PublicacaoViewSet)
 router.register(r'subareas', SubareaViewSet)
 

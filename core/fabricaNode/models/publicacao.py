@@ -2,12 +2,14 @@ from django.db import models
 
 from .autor import Autor
 from .editora import Editora
+from .keyword import Keyword
 
 
 class Publicacao(models.Model):
     titulo = models.CharField(max_length=150)
     dataPublicacao = models.DateField()
     autor = models.ManyToManyField(Autor)
+    keyword = models.ManyToManyField(Keyword)
     editora = models.ForeignKey(Editora, on_delete=models.RESTRICT, null=True, blank=True)
     conferencia = models.CharField(max_length=150)
     abstract = models.TextField()
