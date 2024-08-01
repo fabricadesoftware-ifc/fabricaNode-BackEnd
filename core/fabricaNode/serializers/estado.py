@@ -6,4 +6,4 @@ from core.fabricaNode.models import Estado
 class EstadoSerializer(ModelSerializer):
     class Meta:
         model = Estado
-        fields = '__all__'
+        fields = "__all__"

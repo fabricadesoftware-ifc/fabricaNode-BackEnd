@@ -1,7 +1,8 @@
+import uuid
+
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
-import uuid
 
 class CustomUserManager(BaseUserManager):
     """
@@ -17,7 +18,7 @@ class CustomUserManager(BaseUserManager):
             raise ValueError(_("The Email must be set"))
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        extra_fields.setdefault("passage_id", str(uuid.uuid4())) 
+        extra_fields.setdefault("passage_id", str(uuid.uuid4()))
         user.set_password(password)
         user.save()
         return user

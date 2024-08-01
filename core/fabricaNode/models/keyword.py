@@ -6,8 +6,8 @@ class Keyword(models.Model):
 
     def __str__(self):
         return self.palavra
-    
+
     class Meta:
-        verbose_name = 'Keyword'
-        verbose_name_plural = 'Keywords'
-        ordering = ['palavra']
+        verbose_name = "Keyword"
+        verbose_name_plural = "Keywords"
+        ordering = ["palavra"]

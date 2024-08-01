@@ -6,8 +6,8 @@ class Area(models.Model):
 
     def __str__(self):
         return self.nome
-    
+
     class Meta:
-        verbose_name = 'Área'
-        verbose_name_plural = 'Áreas'
-        ordering = ['nome']
+        verbose_name = "Área"
+        verbose_name_plural = "Áreas"
+        ordering = ["nome"]
