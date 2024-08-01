@@ -6,4 +6,4 @@ from core.fabricaNode.models import Area
 class AreaSerializer(ModelSerializer):
     class Meta:
         model = Area
-        fields = '__all__'
+        fields = "__all__"

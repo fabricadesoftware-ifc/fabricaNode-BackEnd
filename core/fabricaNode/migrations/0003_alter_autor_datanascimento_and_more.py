@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('fabricaNode', '0002_alter_area_nome'),
+        ("fabricaNode", "0002_alter_area_nome"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='autor',
-            name='dataNascimento',
+            model_name="autor",
+            name="dataNascimento",
             field=models.IntegerField(),
         ),
         migrations.AlterField(
-            model_name='publicacao',
-            name='dataPublicacao',
+            model_name="publicacao",
+            name="dataPublicacao",
             field=models.IntegerField(),
         ),
     ]

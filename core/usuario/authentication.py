@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-
 from drf_spectacular.extensions import OpenApiAuthenticationExtension
 from drf_spectacular.plumbing import build_bearer_security_scheme_object
 from passageidentity import Passage, PassageError
@@ -17,15 +16,15 @@ psg = Passage(PASSAGE_APP_ID, PASSAGE_API_KEY, auth_strategy=PASSAGE_AUTH_STRATE
 
 
 class TokenAuthenticationScheme(OpenApiAuthenticationExtension):
-    target_class = 'core.authentication.TokenAuthentication'
-    name = 'tokenAuth'
+    target_class = "core.authentication.TokenAuthentication"
+    name = "tokenAuth"
     match_subclasses = True
     priority = -1
 
     def get_security_definition(self, auto_schema):
         return build_bearer_security_scheme_object(
-            header_name='Authorization',
-            token_prefix='Bearer',
+            header_name="Authorization",
+            token_prefix="Bearer",
         )
 
 

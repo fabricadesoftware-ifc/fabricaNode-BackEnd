@@ -6,4 +6,4 @@ from core.fabricaNode.models import Publicacao
 class PublicacaoSerializer(ModelSerializer):
     class Meta:
         model = Publicacao
-        fields = '__all__'
+        fields = "__all__"

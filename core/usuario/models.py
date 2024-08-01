@@ -10,7 +10,7 @@ class Usuario(AbstractUser):
     passage_id = models.CharField(max_length=255, unique=True)
     email = models.EmailField(_("e-mail address"), unique=True)
     name = models.CharField(_("name"), max_length=255)
-    
+
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     EMAIL_FIELD = "email"

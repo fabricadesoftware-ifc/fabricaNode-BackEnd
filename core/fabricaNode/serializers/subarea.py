@@ -6,4 +6,4 @@ from core.fabricaNode.models import Subarea
 class SubareaSerializer(ModelSerializer):
     class Meta:
         model = Subarea
-        fields = '__all__'
+        fields = "__all__"

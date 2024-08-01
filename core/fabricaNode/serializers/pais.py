@@ -6,4 +6,4 @@ from core.fabricaNode.models import Pais
 class PaisSerializer(ModelSerializer):
     class Meta:
         model = Pais
-        fields = '__all__'
+        fields = "__all__"
