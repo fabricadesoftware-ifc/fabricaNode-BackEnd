@@ -8,7 +8,7 @@ class Autor(models.Model):
     nome = models.CharField(max_length=50)
     sobrenome = models.CharField(max_length=50)
     email = models.EmailField()
-    dataNascimento = models.DateField()
+    dataNascimento = models.IntegerField()
     cidade = models.ForeignKey(Cidade, on_delete=models.RESTRICT)
     subarea = models.ForeignKey(Subarea, on_delete=models.RESTRICT, null=True, blank=True)
 

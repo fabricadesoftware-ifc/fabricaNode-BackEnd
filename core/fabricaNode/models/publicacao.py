@@ -7,7 +7,7 @@ from .keyword import Keyword
 
 class Publicacao(models.Model):
     titulo = models.CharField(max_length=150)
-    dataPublicacao = models.DateField()
+    dataPublicacao = models.IntegerField()
     autor = models.ManyToManyField(Autor)
     keyword = models.ManyToManyField(Keyword)
     editora = models.ForeignKey(Editora, on_delete=models.RESTRICT, null=True, blank=True)
