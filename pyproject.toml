@@ -17,6 +17,7 @@ dependencies = [
     "drf-spectacular>=0.27.2",
     "black>=24.4.2",
     "isort>=5.13.2",
+    "faker>=26.1.0",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
@@ -30,5 +31,7 @@ distribution = false
 dev = "python manage.py runserver 0.0.0.0:8000"
 runserver = "python manage.py runserver"
 createsuperuser = "python manage.py createsuperuser"
+pre_migrate = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
-makemigrations = "python manage.py makemigrations"
+post_migrate = "python manage.py graph_models -g -o core.png core"
+populate = "python fabricaNode/scripts/populate_db.py"

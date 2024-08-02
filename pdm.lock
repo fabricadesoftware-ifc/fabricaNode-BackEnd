@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:87e2f4dbf5de5ad2037d53309160474f1c0051d110c9bdbf02a2c49c33c25a67"
+content_hash = "sha256:bfe9557831b7ad7257d575869a3a952d4ca82ed2fef336b904cdfc5917414bca"
 
 [[metadata.targets]]
 requires_python = ">=3.11"
@@ -353,6 +353,20 @@ dependencies = [
 files = [
     {file = "drf-spectacular-0.27.2.tar.gz", hash = "sha256:a199492f2163c4101055075ebdbb037d59c6e0030692fc83a1a8c0fc65929981"},
     {file = "drf_spectacular-0.27.2-py3-none-any.whl", hash = "sha256:b1c04bf8b2fbbeaf6f59414b4ea448c8787aba4d32f76055c3b13335cf7ec37b"},
+]
+
+[[package]]
+name = "faker"
+version = "26.1.0"
+requires_python = ">=3.8"
+summary = "Faker is a Python package that generates fake data for you."
+groups = ["default"]
+dependencies = [
+    "python-dateutil>=2.4",
+]
+files = [
+    {file = "Faker-26.1.0-py3-none-any.whl", hash = "sha256:e8c5ef795223e945d9166aea3c0ecaf85ac54b4ade2af068d8e3c6524c2c0aa7"},
+    {file = "Faker-26.1.0.tar.gz", hash = "sha256:33921b6fc3b83dd75fd42ec7f47ec87b50c00d3c5380fa7d8a507dab848b8229"},
 ]
 
 [[package]]
