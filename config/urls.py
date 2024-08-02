@@ -15,7 +15,7 @@ from core.usuario.router import router as usuario_router
 router = DefaultRouter()
 
 router.register(r"areas", AreaViewSet)
-router.register(r"autors", AutorViewSet)
+router.register(r"autores", AutorViewSet)
 router.register(r"cidades", CidadeViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r"estados", EstadoViewSet)
