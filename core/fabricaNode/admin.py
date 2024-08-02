@@ -1,7 +1,16 @@
 from django.contrib import admin
 
-from core.fabricaNode.models import (Area, Autor, Cidade, Editora, Estado,
-                                     Keyword, Pais, Publicacao, Subarea)
+from core.fabricaNode.models import (
+    Area,
+    Autor,
+    Cidade,
+    Editora,
+    Estado,
+    Keyword,
+    Pais,
+    Publicacao,
+    Subarea,
+)
 
 admin.site.register(Autor)
 admin.site.register(Cidade)
