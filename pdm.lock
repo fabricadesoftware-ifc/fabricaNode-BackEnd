@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:87e2f4dbf5de5ad2037d53309160474f1c0051d110c9bdbf02a2c49c33c25a67"
+content_hash = "sha256:821fc4408ba7239bc0b1f2fa5fe2c1dd27af3cf1a9964a87023f873cd118b925"
 
 [[metadata.targets]]
 requires_python = ">=3.11"
@@ -302,6 +302,20 @@ dependencies = [
 files = [
     {file = "django_cors_headers-4.4.0-py3-none-any.whl", hash = "sha256:5c6e3b7fe870876a1efdfeb4f433782c3524078fa0dc9e0195f6706ce7a242f6"},
     {file = "django_cors_headers-4.4.0.tar.gz", hash = "sha256:92cf4633e22af67a230a1456cb1b7a02bb213d6536d2dcb2a4a24092ea9cebc2"},
+]
+
+[[package]]
+name = "django-extensions"
+version = "4.1"
+requires_python = ">=3.9"
+summary = "Extensions for Django"
+groups = ["default"]
+dependencies = [
+    "django>=4.2",
+]
+files = [
+    {file = "django_extensions-4.1-py3-none-any.whl", hash = "sha256:0699a7af28f2523bf8db309a80278519362cd4b6e1fd0a8cd4bf063e1e023336"},
+    {file = "django_extensions-4.1.tar.gz", hash = "sha256:7b70a4d28e9b840f44694e3f7feb54f55d495f8b3fa6c5c0e5e12bcb2aa3cdeb"},
 ]
 
 [[package]]
@@ -1027,6 +1041,18 @@ files = [
     {file = "pydantic_core-2.20.1-cp313-none-win32.whl", hash = "sha256:b91ced227c41aa29c672814f50dbb05ec93536abf8f43cd14ec9521ea09afe4e"},
     {file = "pydantic_core-2.20.1-cp313-none-win_amd64.whl", hash = "sha256:65db0f2eefcaad1a3950f498aabb4875c8890438bc80b19362cf633b87a8ab20"},
     {file = "pydantic_core-2.20.1.tar.gz", hash = "sha256:26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"},
+]
+
+[[package]]
+name = "pydotplus"
+version = "2.0.2"
+summary = "Python interface to Graphviz's Dot language"
+groups = ["default"]
+dependencies = [
+    "pyparsing>=2.0.1",
+]
+files = [
+    {file = "pydotplus-2.0.2.tar.gz", hash = "sha256:91e85e9ee9b85d2391ead7d635e3d9c7f5f44fd60a60e59b13e2403fa66505c4"},
 ]
 
 [[package]]
