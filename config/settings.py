@@ -1,19 +1,30 @@
 from pathlib import Path
 
+import environ
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    DEBUG=(bool, True),
+    ALLOWED_HOSTS=(list, ["127.0.0.1", "0.0.0.0", "localhost"]),
+    CORS_ALLOWED_ORIGINS=(list, ["http://localhost:5173"]),
+)
+environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-s9kf0d9&#mkdy!s8&tuy-0)l9!)$n5_0ta)$4x9+k%f186j&1&"
+SECRET_KEY = env(
+    "SECRET_KEY",
+    default="django-insecure-dev-only-change-me",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "localhost"]
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -70,7 +81,7 @@ TEMPLATES = [
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "core.usuario.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
@@ -139,13 +150,8 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API for graph management and article analysis.",
     "VERSION": "1.0.0",
 }
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = DEBUG
+CORS_ALLOWED_ORIGINS = env("CORS_ALLOWED_ORIGINS")
 
 
 AUTH_USER_MODEL = "usuario.Usuario"
-
-PASSAGE_APP_ID = "2TXjjhFWhntb7WqVkG46xAmb"
-PASSAGE_API_KEY = (
-    "pViyBi2hmP.ybl7cWgtedVKULSyldpyCJD6gJUYTSTAi1Vi3BT5ewgqF8N3tbUcTCEMeKsZZ7AX"
-)
-PASSAGE_AUTH_STRATEGY = 2

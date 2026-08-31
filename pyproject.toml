@@ -11,7 +11,6 @@ dependencies = [
     "setuptools>=70.1.0",
     "django-cors-headers>=4.4.0",
     "djangorestframework-simplejwt>=5.3.1",
-    "passage-identity>=2.5.0",
     "firebase-admin>=6.5.0",
     "fcm-django>=2.1.0",
     "drf-spectacular>=0.27.2",
@@ -19,6 +18,9 @@ dependencies = [
     "isort>=5.13.2",
     "django-extensions>=4.1",
     "pydotplus>=2.0.2",
+    "django-environ>=0.11.2",
+    "requests>=2.32.3",
+    "beautifulsoup4>=4.12.3",
 ]
 requires-python = ">=3.11"
 readme = "README.md"

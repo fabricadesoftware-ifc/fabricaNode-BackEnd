@@ -5,4 +5,4 @@ from core.usuario import views
 app_name = "usuario"
 
 router = DefaultRouter()
-router.register("usuarios", views.UserViewSet)
+router.register("usuarios", views.UserViewSet, basename="usuario")

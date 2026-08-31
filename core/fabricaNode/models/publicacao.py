@@ -1,5 +1,7 @@
+from django.conf import settings
 from django.db import models
 
+from .area import Area
 from .autor import Autor
 from .editora import Editora
 from .keyword import Keyword
@@ -10,6 +12,10 @@ class Publicacao(models.Model):
     dataPublicacao = models.IntegerField()
     autor = models.ManyToManyField(Autor)
     keyword = models.ManyToManyField(Keyword)
+    categorias = models.ManyToManyField(Area, related_name="publicacoes", blank=True)
+    favoritos = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="publicacoes_favoritas", blank=True
+    )
     editora = models.ForeignKey(
         Editora, on_delete=models.RESTRICT, null=True, blank=True
     )
@@ -29,6 +35,7 @@ class Publicacao(models.Model):
             ("REG", "Regional"),
             ("LOC", "Local"),
         ],
+        default="NAC",
     )
     tipo = models.CharField(
         max_length=5,

@@ -8,7 +8,10 @@ from rest_framework_simplejwt.views import (TokenObtainPairView,
 
 from core.fabricaNode.views import (AreaViewSet, AutorViewSet, CidadeViewSet,
                                     EditoraViewSet, EstadoViewSet,
-                                    KeywordViewSet, PaisViewSet,
+                                    KeywordViewSet, OpenAlexBuscarView,
+                                    OpenAlexConfirmarView, OpenAlexObrasView,
+                                    OrcidBuscarView, OrcidConfirmarView,
+                                    OrcidObrasView, PaisViewSet,
                                     PublicacaoViewSet, SubareaViewSet)
 from core.usuario.router import router as usuario_router
 
@@ -39,6 +42,28 @@ urlpatterns = [
         name="redoc",
     ),
     path("api/", include(usuario_router.urls)),
-    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/orcid/buscar/", OrcidBuscarView.as_view(), name="orcid-buscar"),
+    path(
+        "api/orcid/obras/<str:orcid_id>/",
+        OrcidObrasView.as_view(),
+        name="orcid-obras",
+    ),
+    path(
+        "api/orcid/confirmar/", OrcidConfirmarView.as_view(), name="orcid-confirmar"
+    ),
+    path(
+        "api/openalex/buscar/", OpenAlexBuscarView.as_view(), name="openalex-buscar"
+    ),
+    path(
+        "api/openalex/obras/<str:openalex_id>/",
+        OpenAlexObrasView.as_view(),
+        name="openalex-obras",
+    ),
+    path(
+        "api/openalex/confirmar/",
+        OpenAlexConfirmarView.as_view(),
+        name="openalex-confirmar",
+    ),
 ]
